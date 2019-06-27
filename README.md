@@ -12,18 +12,8 @@ npm install --save hooks
 
 ## Usage
 
-```tsx
-import * as React from 'react'
-
-import MyComponent from 'hooks'
-
-class Example extends React.Component {
-  render () {
-    return (
-      <MyComponent />
-    )
-  }
-}
+```ts
+// TODO
 ```
 
 ## License
