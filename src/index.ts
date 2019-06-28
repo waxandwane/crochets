@@ -4,6 +4,7 @@ import { useEvent } from './useEvent';
 import { useClipboard } from './useClipboard';
 import { useMouseOver } from './useMouseOver';
 import { useScrollBlock } from './useScrollblock';
+import { useMQ } from './useMQ';
 
 export {
   usePrevious,
@@ -12,4 +13,5 @@ export {
   useMouseOver,
   useClipboard,
   useScrollBlock,
+  useMQ,
 };
