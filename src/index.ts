@@ -1,12 +1,12 @@
-import { usePrevious } from './usePrevious';
-import { useInViewport } from './useInViewport';
-import { useEvent } from './useEvent';
 import { useClipboard } from './useClipboard';
-import { useMouseOver } from './useMouseOver';
-import { useScrollBlock } from './useScrollblock';
-import { useMQ } from './useMQ';
+import { useEvent } from './useEvent';
+import { useInViewport } from './useInViewport';
 import { useMouse } from './useMouse';
+import { useMouseOver } from './useMouseOver';
+import { useMQ } from './useMQ';
+import { usePrevious } from './usePrevious';
 import { useProximity } from './useProximity';
+import { useScrollBlock } from './useScrollblock';
 
 export {
   usePrevious,

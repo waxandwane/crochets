@@ -1,4 +1,4 @@
-import { useEffect, useRef, MutableRefObject } from 'react';
+import { MutableRefObject, useEffect, useRef } from 'react';
 
 export const usePrevious = <T>(currentVal: T): T | null => {
   const ref: MutableRefObject<T | null> = useRef(null);

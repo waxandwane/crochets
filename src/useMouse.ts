@@ -1,5 +1,5 @@
-import { useState, useRef, useEffect } from 'react';
 import { useEvent } from '@lib';
+import { useEffect, useRef, useState } from 'react';
 
 export const useMouse = (
   target: EventTarget = document,

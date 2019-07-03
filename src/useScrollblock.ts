@@ -1,7 +1,7 @@
-import { useState, useLayoutEffect } from "react";
-import { usePrevious } from "@lib";
+import { usePrevious } from '@lib';
+import { useLayoutEffect, useState } from 'react';
 
-const HIDDEN = 'hidden'
+const HIDDEN = 'hidden';
 
 export const useScrollBlock = (
   locked: boolean,
