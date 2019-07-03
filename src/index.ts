@@ -5,6 +5,8 @@ import { useClipboard } from './useClipboard';
 import { useMouseOver } from './useMouseOver';
 import { useScrollBlock } from './useScrollblock';
 import { useMQ } from './useMQ';
+import { useMouse } from './useMouse';
+import { useProximity } from './useProximity';
 
 export {
   usePrevious,
@@ -14,4 +16,6 @@ export {
   useClipboard,
   useScrollBlock,
   useMQ,
+  useMouse,
+  useProximity,
 };
