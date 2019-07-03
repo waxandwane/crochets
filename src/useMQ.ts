@@ -5,7 +5,7 @@ export interface MQSizes {
 }
 
 export const useMQ = (sizes: MQSizes): string => {
-  const [currentMQ, setCurrentMQ] = useState("COUCOU");
+  const [currentMQ, setCurrentMQ] = useState("");
   const onlyWidths = useMemo(() => Object.values(sizes).sort((a, b) => a - b), [
     sizes
   ]);
