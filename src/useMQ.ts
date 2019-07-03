@@ -1,32 +1,29 @@
-import { useState, useEffect, useMemo, useCallback } from "react";
+import { useCallback, useEffect, useMemo, useState } from 'react';
 
 export interface MQSizes {
-  [MediaQueryName: string]: number
+  [MediaQueryName: string]: number;
 }
 
 export const useMQ = (sizes: MQSizes): string => {
-  const [currentMQ, setCurrentMQ] = useState("");
+  const [currentMQ, setCurrentMQ] = useState('');
   const onlyWidths = useMemo(() => Object.values(sizes).sort((a, b) => a - b), [
-    sizes
+    sizes,
   ]);
 
-  const onResize = useCallback(
-    (): void => {
-      const width = window.innerWidth;
-      const smallestSize = onlyWidths.find(size => width <= size);
-      const nameOfSmallestSize = Object.keys(sizes).find(
-        name => sizes[name] === smallestSize
-      ) || Object.keys(sizes)[0];
-      setCurrentMQ(nameOfSmallestSize);
-    },
-    [onlyWidths, sizes],
-  )
+  const onResize = useCallback((): void => {
+    const width = window.innerWidth;
+    const smallestSize = onlyWidths.find((size) => width <= size);
+    const nameOfSmallestSize =
+      Object.keys(sizes).find((name) => sizes[name] === smallestSize) ||
+      Object.keys(sizes)[0];
+    setCurrentMQ(nameOfSmallestSize);
+  }, [onlyWidths, sizes]);
 
   useEffect(() => {
     onResize();
-    window.addEventListener("resize", onResize, { passive: true });
+    window.addEventListener('resize', onResize, { passive: true });
     return () => {
-      window.removeEventListener("resize", onResize);
+      window.removeEventListener('resize', onResize);
     };
   }, [onResize]);
 

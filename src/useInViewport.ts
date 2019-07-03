@@ -1,5 +1,5 @@
-import { useState, useEffect, useRef, MutableRefObject } from 'react';
 import { usePrevious } from '@lib';
+import { MutableRefObject, useEffect, useRef, useState } from 'react';
 
 const percentage = [...Array(100).keys()].map((i) => i * 0.01);
 const defaultOptions = {

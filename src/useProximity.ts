@@ -1,5 +1,5 @@
-import { useState, useRef, useLayoutEffect, MutableRefObject } from 'react';
 import { useMouse } from '@lib';
+import { MutableRefObject, useLayoutEffect, useRef, useState } from 'react';
 
 export const useProximity = ({ max, min } = { max: 200, min: 0 }) => {
   const ref: MutableRefObject<HTMLElement | undefined> = useRef();
