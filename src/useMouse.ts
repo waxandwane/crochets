@@ -1,32 +1,25 @@
 import { useEvent } from '@lib';
-import { useEffect, useRef, useState } from 'react';
+import { useCallback, useState } from 'react';
 
 export const useMouse = (
   target: EventTarget = document,
-  options: AddEventListenerOptions = { passive: true, capture: false }
+  { passive, capture }: AddEventListenerOptions = {
+    passive: true,
+    capture: false,
+  }
 ) => {
   const [mouse, setMouse] = useState({ x: 0, y: 0 });
-  const frame = useRef(0);
-
-  const handleMouse = (e: MouseEvent) => {
-    cancelAnimationFrame(frame.current);
-
-    frame.current = requestAnimationFrame(() => {
+  const handleMouse = useCallback(
+    (e: MouseEvent) => {
       setMouse({
         x: e.clientX,
         y: e.clientY,
       });
-    });
-  };
-
-  useEffect(
-    () => () => {
-      cancelAnimationFrame(frame.current);
     },
-    []
+    [setMouse]
   );
 
-  useEvent('mousemove', handleMouse, target, options);
+  useEvent('mousemove', handleMouse, target, { passive, capture });
 
   return mouse;
 };
